@@ -8,10 +8,10 @@ function mostrarAumento()
 	let importe;
 
 	
-	importe = parseInt(document.getElementById("txtIdImporte").value);
+	importe = parseFloat(document.getElementById("txtIdImporte").value);
 
 	
-	document.getElementById("txtIdResultado").value = importe * 0.25;
+	document.getElementById("txtIdResultado").value = importe * 0.75;
 	
 
 
