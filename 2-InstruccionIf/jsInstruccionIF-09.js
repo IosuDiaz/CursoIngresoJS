@@ -1,6 +1,10 @@
 function mostrar()
 {
-	//Genero el número RANDOM entre 1 y 10 
-	alert("ok");	
+	let numAleatorio;
 
-}//FIN DE LA FUNCIÓN
+	numAleatorio = Math.round(Math.random() * (36 - 0) + 0);
+
+
+	alert (numAleatorio);
+
+}
