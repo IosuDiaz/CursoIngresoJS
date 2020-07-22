@@ -38,5 +38,11 @@ function mostrar()
 		case 6:
 			alert ("Es de noche");
 		break;
+
+		default: 
+			alert ("Ingrese un horario válido");
+		break;
+
 	}
+
 }
