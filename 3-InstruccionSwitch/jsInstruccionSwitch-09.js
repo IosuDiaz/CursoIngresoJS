@@ -2,12 +2,17 @@ function mostrar()
 { 
 	
 	let destino;
-	let tarifaMin = 15000; //Preguntar si así se declaran constantes
-	let tarifaTotal;
+	let aumento=0;
+	let descuento=0;
+	const PRECIO = 15000;
+	let precioFinal;
 
+	//Relevamiento de datos de entrada
 	estacion = document.getElementById("txtIdEstacion").value;
 	destino = document.getElementById("txtIdDestino").value;
+	//---------------------------------------------------------
 
+	//Calculo de porcentade de aumento o descuento
 	switch (estacion){
 
 	case "Invierno":
@@ -15,19 +20,16 @@ function mostrar()
 		switch (destino) {
 
 			case "Bariloche":
-				tarifaTotal = tarifaMin * 120 / 100;
-				alert ("El precio es: $" +  (tarifaTotal).toFixed(2));
+				aumento = 20;
 			break;
 
 			case "Cataratas":
 			case "Ushuaia":
-				tarifaTotal = tarifaMin * 90 / 100;
-				alert ("El precio es: $" +  (tarifaTotal).toFixed(2));
+				descuento = 10;
 			break;
 
 			case "Mar del plata":
-				tarifaTotal = tarifaMin * 80 / 100;
-				alert ("El precio es: $" +  (tarifaTotal).toFixed(2));
+				descuento = 20;
 			break;
 		}
 	break;
@@ -37,19 +39,16 @@ function mostrar()
 		switch (destino){
 
 			case "Bariloche":
-				tarifaTotal = tarifaMin * 80 / 100;
-				alert ("El precio es: $" +  (tarifaTotal).toFixed(2));
+				descuento = 20;
 			break;
 			
 			case "Cataratas":
 			case "Ushuaia":
-				tarifaTotal= tarifaMin * 110 /100
-				alert ("El precio es: $" +  (tarifaTotal).toFixed(2));
+				aumento = 10;
 			break;
 
 			case "Mar del plata":
-				tarifaTotal = tarifaMin * 120 / 100;
-				alert ("El precio es: $" +  (tarifaTotal).toFixed(2));
+				aumento = 20;
 			break;
 		}
 	break;
@@ -57,19 +56,29 @@ function mostrar()
 	default:
 
 		switch (destino){
-
-			case "Ushuaia":
-				tarifaTotal= tarifaMin
-				alert ("El precio es: $" +  (tarifaTotal).toFixed(2));
-			break;
-
-			default:
-				tarifaTotal= tarifaMin * 110 /100
-				alert ("El precio es: $" +  (tarifaTotal).toFixed(2));
+			case "Bariloche":
+			case "Cataratas":
+			case "Mar del plata":
+				aumento = 10;
 			break;
 		}
-	} 
-}
+	} //---------------------------------------------------------------------
+	
+	//Calculo de precio final de acuerdo a si corresponde aumento o descuento
+	if ( aumento != 0){
+		precioFinal = PRECIO + PRECIO * aumento / 100;
+	}
+	else if (descuento != 0){
+		precioFinal = PRECIO - PRECIO * descuento / 100;
+	}
+	else {
+		precioFinal = PRECIO;
+	}//------------------------------------------------------------------------
+
+	//Mostramos la informacion
+	alert ("Precio final $ " + precioFinal.toFixed(2));
+	//------------------------------------------------------------------------
+}//Fin funcion
 	
 	
 	

@@ -5,25 +5,28 @@ function mostrar()
 
     destino = document.getElementById("txtIdDestino").value;
 
+    if (destino == "Bariloche" || destino == "Ushuaia"){
+        alert ("Hace frío");
+    }
+    else {
+        alert ("Hace calor");
+    }
+
+    /*
     switch (destino){
         case "Bariloche":
-            alert ("Hace frío");
-        break;
-        
-        case "Cataratas":
-            alert ("Hace calor");
-        break;
-        
-        case "Mar del plata":
-            alert ("Hace calor");
-        break;
-
         case "Ushuaia":
             alert ("Hace frío");
         break;
 
+        case "Cataratas":
+        case "Mar del plata":
+            alert ("Hace calor");
+        break;
+
+        
     }
 
-
+*/
 
 }

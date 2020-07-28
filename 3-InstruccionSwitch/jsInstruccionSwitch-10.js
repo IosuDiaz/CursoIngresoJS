@@ -1,8 +1,6 @@
 function mostrar()
 {
 	let destino;
-	let tarifaMin = 15000; //Preguntar si así se declaran constantes
-	let tarifaTotal;
 
 	estacion = document.getElementById("txtIdEstacion").value;
 	destino = document.getElementById("txtIdDestino").value;
@@ -10,7 +8,13 @@ function mostrar()
 	switch(estacion){
 
 		case "Invierno":
-
+			if (destino == "Bariloche"){
+				alert ("Se viaja")
+			}	
+			else {
+				alert ("No se viaja")
+			}
+		/*
 			switch (destino){
 
 				case "Bariloche":
@@ -20,13 +24,19 @@ function mostrar()
 				default:
 					alert("No se viaja");
 				break;
-			}
+			}*/
 		break;
 
 		case "Verano":
-
+			if (destino == "Mar del plata" || destino == "Cataratas"){
+				alert ("Se viaja")
+			}
+			else {
+				alert ("No se viaja")
+			}
+		/*
 			switch (destino){
-
+				
 				case "Cataratas":
 				case "Mar del plata":
 					alert ("Se viaja");
@@ -36,12 +46,18 @@ function mostrar()
 					alert ("No se viaja");
 				break;
 
-			}
+			}*/
 		break;
 
 		case "Primavera":
-
-			 switch (destino){
+			if (destino != "Bariloche"){
+				alert ("Se viaja");
+			}
+			else {
+				alert ("No se viaja")
+			}
+		/*
+			switch (destino){
 				 
 				case "Bariloche":
 					 alert ("No se viaja");
@@ -50,10 +66,10 @@ function mostrar()
 				default:
 					alert ("No se viaja");
 				break;
-			 }
+			 }*/
 		break;
 
-		default:
+		case "Otoño":
 			alert ("Se viaja");
 		break;
 	}

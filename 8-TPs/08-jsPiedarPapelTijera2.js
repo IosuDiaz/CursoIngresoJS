@@ -1,31 +1,94 @@
-var eleccionMaquina;
-var ContadorDeEmpates=0;
-var ContadorDeGanadas=0;
-var ContadorDePerdidas=0;
+let eleccionMaquina;
+let ContadorDeEmpates=0;
+let ContadorDeGanadas=0;
+let ContadorDePerdidas=0;
 
 function comenzar()
 {
-	//Genero el número RANDOM entre 1 y 3
-	 	
+	alert ("Bienvenido al juego ")
+    eleccionMaquina = Math.round(Math.random()* 2 + 1);
 
+    if (eleccionMaquina == 1){
+        eleccionMaquina = "Piedra";
+    }
+    else if (eleccionMaquina == 2){
+        eleccionMaquina = "Papel";
+    }
+    else {
+        eleccionMaquina = "Tijera";
+    }
+    mostrarResultado()
+}//---------------------------------------------------------
 
+function piedra(){
 
-}//FIN DE LA FUNCIÓN
-function piedra()
-{
+	let resultado;
+
+    switch(eleccionMaquina){
+        case "Piedra":
+            resultado = "Empate";
+            ContadorDeEmpates++
+            break;
+        case "Papel":
+            resultado = "Perdiste";
+            ContadorDePerdidas++
+            break;
+        case "Tijera":
+            resultado = "Ganaste";
+            ContadorDeGanadas++
+            break;
+    }
+    alert (eleccionMaquina + " -----> " + resultado);
+    comenzar()
+
+}//----------------------------------------------------
+function papel(){
+
+	let resultado;
+
+    switch(eleccionMaquina){
+        case "Piedra":
+            resultado ="Ganaste";
+            ContadorDeGanadas++
+            break;
+        case "Papel":
+            resultado ="Empate";
+            ContadorDeEmpates++
+            break;
+        case "Tijera":
+            resultado= "Perdiste";
+            ContadorDePerdidas++
+            break;
+    }
+    alert (eleccionMaquina + " -----> " + resultado);
+    comenzar()
+
+}//-----------------------------------------------------
+function tijera(){
 	
+	let resultado;
 
-}//FIN DE LA FUNCIÓN
-function papel()
-{
-
-}//FIN DE LA FUNCIÓN
-function tijera()
-{
-	
-}//FIN DE LA FUNCIÓN
+	switch(eleccionMaquina){
+        case "Piedra":
+            resultado = "Perdiste";
+            ContadorDePerdidas++
+            break;
+        case "Papel":
+            resultado = "Ganaste";
+            ContadorDeGanadas++
+            break;
+        case "Tijera":
+            resultado = "Empataste";
+            ContadorDeEmpates++
+            break;
+    }
+    alert (eleccionMaquina + " -----> " + resultado);
+    comenzar()
+}//------------------------------------------------------
 
 function mostrarResultado()
 {
-
+document.getElementById("txtIdGanadas").value = ContadorDeGanadas;
+document.getElementById("txtIdPerdidas").value = ContadorDePerdidas
+document.getElementById("txtIdEmpatadas").value = ContadorDeEmpates
 }
